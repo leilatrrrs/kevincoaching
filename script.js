@@ -17,9 +17,21 @@ toggleButton.addEventListener('click', function() {
     }
 });
 
+
 const burgerButton = document.getElementById('burger-menu');
 const menu = document.querySelector('.menu');
+const burgerIcon = document.querySelector('.fa-bars');
+const closeIcon = document.querySelector('.fa-xmark');
 
 burgerButton.addEventListener('click', function() {
     menu.classList.toggle('active');
+    
+    // Bascule entre l'icône burger et l'icône croix
+    if (menu.classList.contains('active')) {
+        burgerIcon.style.display = 'none';
+        closeIcon.style.display = 'inline';
+    } else {
+        burgerIcon.style.display = 'inline';
+        closeIcon.style.display = 'none';
+    }
 });
