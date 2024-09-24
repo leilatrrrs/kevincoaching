@@ -1,0 +1,76 @@
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #121212;
+}
+header nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;    
+}
+
+header img {
+    height: 89px;
+    padding-top: 5px;
+}
+    
+
+/* Mode Nuit */
+body.night-mode {
+    background-color: #121212;
+    color: white;
+}
+
+header.night-mode {
+    background-color: red;
+}
+
+/* Style du bouton */
+
+#theme-toggle {
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #f0f0f0;
+    margin-right: 5%;
+}
+
+#theme-toggle i {
+    transition: opacity 0.3s ease;
+}
+
+.burger {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #f0f0f0;
+    margin-left: 5%;
+}
+
+/* Cacher le menu par défaut */
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu.active {
+    display: flex;
+}
