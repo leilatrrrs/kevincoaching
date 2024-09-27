@@ -1,8 +1,9 @@
 body {
-    background-color: green;
-    color: black;
+    background-color: black;
+    color: white;
     margin: 0;
     padding: 0;
+     font-family:"Bricolage Grotesque"
 }
 
 header{
@@ -62,23 +63,34 @@ header.night-mode {
 .menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Légèrement transparent */
-    backdrop-filter: blur(10px); /* Flou */
-    overflow: hidden; /* Empêche le débordement lors de l'animation */
-    max-height: 0; /* Hauteur initiale fermée */
-    transition: max-height 0.5s ease; /* Animation de l'ouverture et fermeture */
-    z-index: 9998; /* Sous le bouton burger */
-    padding: 0 20px;
+    height: 100%;
+    transform: scaleY(0); /* Réduit à 0 l'échelle verticale pour être invisible */
+    opacity: 0; /* Rendre invisible pendant la transition */
+    transform-origin: top; /* L'animation commence par le haut */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transition fluide sur transform et opacity */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 9998;
+    padding: 20px;
+    overflow: hidden; /* Empêche le débordement */
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .menu.active {
-    max-height: 100%;
+    max-height: 2000px;
+    height: 100%;
+    width: -webkit-fill-available;
+    transform: scaleY(1); /* Retour à la taille normale verticale */
+    opacity: 1; /* Rendre visible */
+    margin-top: 86px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
 }
 
 .menu li {
@@ -88,11 +100,110 @@ header.night-mode {
 
 .menu li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 24px;
 }
 
 /* Style des liens quand on passe la souris */
 .menu li a:hover {
-    color: #ff4081; /* Couleur au survol */
+    color: #c99f15; /* Couleur au survol */
+}
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    font-family:"Bricolage Grotesque" ;
+}
+
+#video-player {
+    width: 100%;
+    height: auto;
+}
+
+.video-title {
+    position: absolute;
+    top: 50%; /* Place au milieu verticalement */
+    left: 50%; /* Place au milieu horizontalement */
+    transform: translate(-50%, -50%); /* Centre parfaitement en utilisant la translation */
+    color: white;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre du texte */
+    z-index: 10; /* Pour s'assurer que le texte reste au-dessus de la vidéo */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#video-title-text {
+    margin: 0;
+    font-size: 1.9em;
+}
+.video-sous-titre{
+    color: #BC965C;
+    font-size: 1.2em;
+}
+
+.call-btn{
+    text-decoration: none;
+    color: #f0f0f0;
+    padding: 14px 22px;
+    background-color: #BC965C;
+    border-radius: 20px;
+
+}
+
+/**************************apropos**************************/
+.a-propos{
+    padding: 50px 150px ;
+}
+
+.a-propos h1{
+    color: #f0f0f0;
+    text-align: center;
+    font-size: 4em;
+}
+
+.section-a-propos{
+    display: flex;
+    flex-direction: row;
+    color: #f0f0f0;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-a-propos img{
+    width:80%;
+    height: 100%;
+    margin-left: 40px;
+}
+.text-a-propos,.img-a-propos {
+    width: 100%; /* Ajustez pour laisser de l'espace pour l'image */
+    height: 100%;
+}
+.text-a-propos h2{
+    text-align: center;
+    font-size: 3em;
+    margin-top: -80px;   
+}
+
+.p2{
+    margin-top: 40px;
+    text-align: end;
+}
+
+.les-plus{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 30px;
+}
+.les-plus img{
+margin-right: 20px;
 }
