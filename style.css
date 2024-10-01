@@ -163,7 +163,7 @@ header.night-mode {
     padding: 50px 150px ;
 }
 
-.a-propos h1{
+.a-propos h1, .evjf h1, .teambuilding h1, .tarifs h1{
     color: #f0f0f0;
     text-align: center;
     font-size: 4em;
@@ -173,7 +173,6 @@ header.night-mode {
     display: flex;
     flex-direction: row;
     color: #f0f0f0;
-
     justify-content: space-between;
     align-items: center;
 }
@@ -182,6 +181,7 @@ header.night-mode {
     width:80%;
     height: 100%;
     margin-left: 40px;
+    border-radius: 3%;
 }
 .text-a-propos,.img-a-propos {
     width: 100%; /* Ajustez pour laisser de l'espace pour l'image */
@@ -203,7 +203,104 @@ header.night-mode {
     flex-direction: row;
     align-items: center;
     padding-top: 30px;
+    gap: 110px;
 }
 .les-plus img{
-margin-right: 20px;
+    margin-right: 20px;
+}
+
+.les-plus p {
+    display: flex;
+    align-items: center;
+}
+/**************************EVJF**************************/
+.evjf{
+    margin: 50px 150px;
+}
+.section-evjf{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+.img-evjf {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 80px;
+}
+.img-evjf img, .img-evg img, .img-tb img{
+    width: 100%;
+    border-radius: 3%;
+}
+.evjf-a-propos{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/**************************EVG**************************/
+.section-evg{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 80px;
+}
+.img-evg {
+    width: 100%;
+    height: 100%;
+}
+
+.evg-a-propos{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/**************************TB**************************/
+
+.teambuilding{
+    margin: 50px 150px
+}
+.section-tb{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+.img-tb {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 80px;
+}
+
+/**************************TB**************************/
+
+.tarifs{
+    margin: 50px 150px;
+}
+
+.section-tarifs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 50px;
+    gap: 44px;
+}
+.section-tarifs h2{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.tarifs-a, .tarifs-b, .tarifs-c{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color:#18181B;
+    border-radius: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tarifs-a img, .tarifs-b img, .tarifs-c img{
+    max-width: 100%;
+    max-height: 100%;
 }
