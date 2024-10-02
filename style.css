@@ -215,7 +215,7 @@ header.night-mode {
 }
 /**************************EVJF**************************/
 .evjf{
-    margin: 50px 150px;
+    margin: 100px 150px;
 }
 .section-evjf{
     display: flex;
@@ -242,7 +242,7 @@ header.night-mode {
 .section-evg{
     display: flex;
     gap: 25px;
-    margin-bottom: 80px;
+    margin-bottom: 145px;
 }
 .img-evg {
     width: 100%;
@@ -258,7 +258,7 @@ header.night-mode {
 /**************************TB**************************/
 
 .teambuilding{
-    margin: 50px 150px
+    margin: 100px 150px
 }
 .section-tb{
     display: flex;
@@ -274,7 +274,7 @@ header.night-mode {
 /**************************TB**************************/
 
 .tarifs{
-    margin: 50px 150px;
+    margin: 100px 150px;
 }
 
 .section-tarifs{
@@ -303,4 +303,38 @@ header.night-mode {
 .tarifs-a img, .tarifs-b img, .tarifs-c img{
     max-width: 100%;
     max-height: 100%;
+}
+
+footer{
+    height: 115px;
+    background-color: #18181B;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+footer a{
+    text-decoration: none;
+    color: #f0f0f0;
+}
+.footer-case{
+    display: flex;
+    flex-direction: row;
+    padding-inline: 150px;
+    justify-content: space-between;
+    background-color: #18181B;
+}
+
+.plan{
+    display: flex;
+    flex-direction: column;
+}
+
+.plan a {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-footer{
+    background-color: #18181B;
+    justify-content: center;
+    text-align: center;
 }
