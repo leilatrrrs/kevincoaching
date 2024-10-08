@@ -1,23 +1,3 @@
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-const sunIcon = document.querySelector('.fa-sun');
-const moonIcon = document.querySelector('.fa-moon');
-
-toggleButton.addEventListener('click', function() {
-    body.classList.toggle('night-mode');
-    
-    if (body.classList.contains('night-mode')) {
-        // Affiche l'icône lune et cache l'icône soleil
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'inline';
-    } else {
-        // Affiche l'icône soleil et cache l'icône lune
-        sunIcon.style.display = 'inline';
-        moonIcon.style.display = 'none';
-    }
-});
-
-
 const burgerButton = document.getElementById('burger-menu');
 const menu = document.querySelector('.menu');
 const burgerIcon = document.querySelector('.fa-bars');
@@ -64,3 +44,20 @@ playNextVideo();
 
 // Passer à la vidéo suivante lorsqu'une vidéo se termine
 videoPlayer.addEventListener('ended', playNextVideo);
+
+// Scroll effect 
+    document.querySelectorAll('.scroll-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut
+
+            const targetId = this.getAttribute('href').substring(1); // Récupère l'ID de la section cible
+            const targetSection = document.getElementById(targetId);
+
+            // Scroll fluide vers la section cible
+            window.scrollTo({
+                top: targetSection.offsetTop, // Position verticale de la section
+                behavior: 'smooth' // Scrolling fluide
+            });
+        });
+    });
+
