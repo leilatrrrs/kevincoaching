@@ -174,7 +174,16 @@ header img {
     height: 100%;
     margin-left: 40px;
     border-radius: 3%;
+    opacity: 0;
+    transform: translateX(100px); /* Déplace l'image hors de l'écran vers la droite */
+    transition: all 0.5s ease-in-out;
 }
+
+.img-a-propos.show img {
+    opacity: 1;
+    transform: translateX(0); /* Remet l'image à sa position originale */
+}
+
 .text-a-propos,.img-a-propos {
     width: 100%; /* Ajustez pour laisser de l'espace pour l'image */
     height: 100%;
@@ -196,6 +205,7 @@ header img {
     align-items: center;
     padding-top: 30px;
     gap: 110px;
+    justify-content: center;
 }
 .les-plus img{
     margin-right: 20px;
@@ -229,7 +239,16 @@ header img {
     flex-direction: column;
     gap: 8px;
 }
+.img-evjf img {
+    opacity: 0;
+    transform: translateX(-100px); /* Déplacement initial vers la gauche */
+    transition: all 0.5s ease-in-out;
+}
 
+.img-evjf.show img {
+    opacity: 1;
+    transform: translateX(0); /* Ramène l'image à sa position originale */
+}
 
 /**************************EVG**************************/
 .section-evg{
@@ -247,7 +266,16 @@ header img {
     flex-direction: column;
     gap: 8px;
 }
+.img-evg img {
+    opacity: 0;
+    transform: translateX(100px); /* Déplacement initial vers la droite */
+    transition: all 0.5s ease-in-out;
+}
 
+.img-evg.show img {
+    opacity: 1;
+    transform: translateX(0); /* Ramène l'image à sa position originale */
+}
 /**************************TB**************************/
 
 .teambuilding{
@@ -255,14 +283,12 @@ header img {
 }
 .section-tb{
     display: flex;
-    gap: 25px;
+    gap: 15px;
     width: 100%;
-    height: 260px;
 }
 .img-tb {
     width: 100%;
     height: 100%;
-    margin-bottom: 80px;
 }
 .tb-a-propos{
     display: flex;
@@ -272,7 +298,8 @@ header img {
 .info{
     display: flex;
     justify-content: end;
-    gap: 20px; ;
+    gap: 20px; 
+    margin-top: 30px;
 }
 .info p{
     border: #AA8753 solid 3px;
@@ -283,6 +310,23 @@ header img {
     font-weight: 300;
     color: #BC965C;
     text-align: center;
+}
+
+.info a {
+    color: #c99f15;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.img-tb img {
+    opacity: 0;
+    transform: translateX(-100px); /* Déplacement initial vers la gauche */
+    transition: all 0.5s ease-in-out;
+}
+
+.img-tb.show img {
+    opacity: 1;
+    transform: translateX(0); /* Ramène l'image à sa position originale */
 }
 /**************************tarifs**************************/
 
@@ -335,7 +379,7 @@ header img {
 }
 .interesse .call-btn{
     margin-top: 60px;
-    width: 20%;
+    width: 25%;
 }
 
 
@@ -400,4 +444,123 @@ footer a{
 
 .social a {
     margin-right: 8px
+}
+
+@media (max-width:934px) {
+    .a-propos{
+        padding:45px 64px ;
+    }
+    .evjf, .teambuilding, .tarifs, .interesse{
+        margin: 45px 64px;
+    }
+    #video-title-text{
+        margin-right: 25px;
+    }
+    .text-a-propos h2 {
+        font-size: 2.1em;
+    }
+    .text-a-propos p,.p2, .evg-a-propos p, .evjf-a-propos p, .tb-a-propos p{
+        font-size: 0.9em;
+        text-align: center;
+    }
+    .les-plus{
+        gap: 40px;
+        justify-content: center;
+    }
+    .les-plus p {
+        font-size: 0.8em;
+    }
+    .info{
+        justify-content: center;
+        gap: 62px;
+    }
+    .info p{
+        width: 36%;
+    }
+    .section-tarifs{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+        gap: 20px;
+        margin-inline: auto;
+    }
+    .section-evjf{
+        flex-direction: column;
+        width: 80%;
+        margin-inline: auto;
+    }
+    .img-evjf {
+        margin-bottom: 0;
+    }
+    .section-evg{
+        flex-direction: column-reverse;
+        width: 80%;
+        margin-inline: auto;
+    }
+    .section-tb{
+        flex-direction: column;
+        width: 80%;
+        margin-inline: auto;
+    }
+
+    .info{
+        margin-top: 20px;
+    }
+    .footer-case{
+        padding-inline:47px;
+    } 
+}
+
+@media (max-width:857px) {
+    #video-title-text {
+        font-size: 1.2em;
+}
+.video-sous-titre {
+    font-size: 1em;
+}
+
+.section-tarifs{
+    grid-template-columns: 1fr;
+}
+
+}
+
+@media (max-width:686px) {
+    #video-title-text{
+        display: flex;
+        justify-content: center;
+        font-size: 0.9em;
+        margin-right: 19px;
+    }
+    .video-sous-titre {
+        font-size: 0.7em;
+    }
+    .video-title .call-btn{
+        font-size: 0.7em;
+    }
+    .section-a-propos{
+        flex-direction: column-reverse;
+    }
+    .img-a-propos img{
+        width:44%;
+        margin-bottom: 100px;
+        display: flex;
+        margin-inline:auto;
+    }
+    .text-a-propos h2{
+        font-size: 1.8em;
+    }
+    .footer-case{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:537px){
+    .a-propos h1, .evjf h1, .teambuilding h1, .tarifs h1, .interesse h1{
+        font-size: 3em;
+    }
+    .info{
+        gap: 15px;
+    }
 }

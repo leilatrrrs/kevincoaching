@@ -61,3 +61,52 @@ videoPlayer.addEventListener('ended', playNextVideo);
         });
     });
 
+
+    window.addEventListener('scroll', function() {
+        const imgApropos = document.querySelector('.img-a-propos');
+        const imgPosition = imgApropos.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3; // Ajuste ce ratio pour contrôler le moment de l'apparition
+    
+        if (imgPosition < screenPosition) {
+            imgApropos.classList.add('show');
+        } else {
+            imgApropos.classList.remove('show'); // Optionnel si tu veux que l'effet disparaisse en remontant
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        const imgEvjf = document.querySelector('.img-evjf');
+        const imgEvg = document.querySelector('.img-evg');
+        
+        const imgEvjfPosition = imgEvjf.getBoundingClientRect().top;
+        const imgEvgPosition = imgEvg.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3; // Ajuste ce ratio pour le timing de l'apparition
+    
+        // Vérifie si img-evjf est visible
+        if (imgEvjfPosition < screenPosition) {
+            imgEvjf.classList.add('show');
+        } else {
+            imgEvjf.classList.remove('show');
+        }
+    
+        // Vérifie si img-evg est visible
+        if (imgEvgPosition < screenPosition) {
+            imgEvg.classList.add('show');
+        } else {
+            imgEvg.classList.remove('show');
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        const imgTb = document.querySelector('.img-tb');
+        
+        const imgTbPosition = imgTb.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3; // Ajuste ce ratio si besoin
+    
+        // Vérifie si img-tb est visible
+        if (imgTbPosition < screenPosition) {
+            imgTb.classList.add('show');
+        } else {
+            imgTb.classList.remove('show');
+        }
+    });
