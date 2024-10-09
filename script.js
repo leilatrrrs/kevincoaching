@@ -46,20 +46,29 @@ playNextVideo();
 videoPlayer.addEventListener('ended', playNextVideo);
 
 // Scroll effect 
-    document.querySelectorAll('.scroll-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault(); // Empêche le comportement par défaut
+document.querySelectorAll('.scroll-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault(); // Empêche le comportement par défaut
 
-            const targetId = this.getAttribute('href').substring(1); // Récupère l'ID de la section cible
-            const targetSection = document.getElementById(targetId);
+        const targetId = this.getAttribute('href').substring(1); // Récupère l'ID de la section cible
+        const targetSection = document.getElementById(targetId);
 
-            // Scroll fluide vers la section cible
-            window.scrollTo({
-                top: targetSection.offsetTop, // Position verticale de la section
-                behavior: 'smooth' // Scrolling fluide
+        if (targetSection) {
+            const headerOffset = document.querySelector('header').offsetHeight; // Calcule la hauteur du header fixe
+            const sectionPosition = targetSection.offsetTop - headerOffset;
+
+            // Scroll fluide avec scrollIntoView
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' // Assure que l'ancre soit alignée avec le haut de l'écran
             });
-        });
+
+            // Si le header est fixe, on ajuste après le scroll
+            window.scrollBy(0, -headerOffset); // Ajuste pour ne pas cacher la section
+        }
     });
+});
+
 
 
     window.addEventListener('scroll', function() {

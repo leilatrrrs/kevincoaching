@@ -1,7 +1,7 @@
 body {
-    background-color: black;
-    color: white;
-    margin: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 62%, rgba(188,150,92,1) 99%, rgba(201,159,21,1) 100%);    color: #f0f0f0;
+    color: #f0f0f0;
     padding: 0;
      font-family:"Bricolage Grotesque"
 }
@@ -512,7 +512,7 @@ footer a{
     } 
 }
 
-@media (max-width:857px) {
+@media (max-width:867px) {
     #video-title-text {
         font-size: 1.2em;
 }
@@ -562,5 +562,50 @@ footer a{
     }
     .info{
         gap: 15px;
+    }
+}
+
+@media (max-width: 442px) {
+    #video-title-text{
+        font-size: 0.6em;
+    }
+    .video-sous-titre{
+        font-size: 0.5em;
+    }
+    .video-title .call-btn{
+        font-size:0.5em ;
+    }
+    .a-propos{
+        padding: 0px 15px;
+    }
+    .evjf, .teambuilding, .tarifs, .interesse{
+        margin: 0px 15px;
+    }
+    footer {
+        margin-top: 30px;
+    }
+    .les-plus {
+        gap: 13px;
+    }
+    .les-plus p {
+        font-size: 0.6em;
+    }
+    .les-plus img {
+        margin-right: 10px;
+    }
+    .section-evg, .section-evjf, .section-tb{
+        width: 98%;
+    }
+    .section-tarifs{
+        width: 92%;
+    }
+    .interesse .call-btn{
+        width: 31%;
+    }
+    .footer-case{
+        padding-inline: 26px;
+    }
+    .footer-footer{
+        height: auto;
     }
 }
